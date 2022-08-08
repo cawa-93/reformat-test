@@ -16,5 +16,5 @@ jobs:
           git config user.email github-actions@github.com
           git add --all
           git diff-index --quiet HEAD || git commit -m "style: format code"
-          git push
+          git push origin HEAD:${{ github.github.head_ref }}
       
