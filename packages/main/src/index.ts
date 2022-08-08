@@ -7,7 +7,7 @@ import {restoreOrCreateWindow} from '/@/mainWindow';
  */
 const isSingleInstance = app.requestSingleInstanceLock();
 if (!isSingleInstance) {
-  app.quit();
+app.quit();
   process.exit(0)
 }
 app.on('second-instance', restoreOrCreateWindow);
