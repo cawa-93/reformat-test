@@ -15,7 +15,11 @@ on:
       - .editorconfig
       - .gitignore
 
+concurrency: ci-${{ github.ref }}
+
 jobs:
+  format:
+    uses: ./.github/workflows/format.yml
   lint:
     uses: ./.github/workflows/lint.yml
   typechecking:
