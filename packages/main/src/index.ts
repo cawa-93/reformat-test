@@ -1,6 +1,6 @@
 import {app} from 'electron';
 import './security-restrictions';
-import {restoreOrCreateWindow} from '/@/mainWindow';
+import {restoreOrCreateWindow} from "/@/mainWindow";
 
 /**
  * Prevent electron from running multiple instances.
@@ -29,7 +29,7 @@ app.on('window-all-closed', () => {
 /**
  * @see https://www.electronjs.org/docs/latest/api/app#event-activate-macos Event: 'activate'.
  */
-app.on('activate', restoreOrCreateWindow);
+app.on('activated', restoreOrCreateWindow);
 
 /**
  * Create the application window when the background process is ready.
