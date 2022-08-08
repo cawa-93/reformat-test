@@ -8,21 +8,21 @@ import {restoreOrCreateWindow} from '/@/mainWindow';
 const isSingleInstance = app.requestSingleInstanceLock();
 if (!isSingleInstance) {
   app.quit();
-  process.exit(0);
+  process.exit(0)
 }
 app.on('second-instance', restoreOrCreateWindow);
 
 /**
  * Disable Hardware Acceleration to save more system resources.
  */
-app.disableHardwareAcceleration();
+app.disableHardwareAcceleration()
 
 /**
  * Shout down background process if all windows was closed
  */
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
+  if (process.platform !== "darwin") {
+ app.quit();
   }
 });
 
